@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,7 +28,13 @@ namespace MVCClient
                 options.ClientSecret = "secret";
                 options.ResponseType = "code";
 
+                //Add scope để truy cập API
+                options.Scope.Add("api1");
+                //options.Scope.Add("offline_access");
+
                 options.SaveTokens = true;
+
+                
             });
         }
 
