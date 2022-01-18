@@ -31,6 +31,7 @@ namespace MVCClient.Controllers
 
         public async Task<IActionResult> CallApi()
         {
+            //Lấy accessToken từ session
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
             var client = new HttpClient();
